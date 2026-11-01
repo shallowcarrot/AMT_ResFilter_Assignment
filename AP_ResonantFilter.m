@@ -26,7 +26,7 @@ Fs  = 48000;                        % Sample Rate [Hz]
 f0  = 1000;                         % Cutoff / Resonance Frequency [Hz]
 r   = 0.71;                         % Feedback Coefficient (0<r<1)
 
-mode = 2;                           % Which approximation will be used for output
+mode = 0;                           % Which approximation will be used for output
                                     % (0 = FE; 1 = BE; 2 = Exact)
 
 % Audio file input
@@ -105,7 +105,7 @@ for n = 1 : Nf-1
     yb(n) = c*xb;
 
 end
-simTime = toc;
+simTime = toc
 
 
 %-------------------------------------------------------
@@ -156,9 +156,9 @@ else
     H = H_exact;
 end
 
-LFFT = length(H);
 
 % Compute the DFT of the input signal and impulse response
+LFFT = length(H);
 X = fft(x, LFFT);
 
 % Multiplication (Convolution in frequency domain)
